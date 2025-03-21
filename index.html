@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .projects-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .general-projects, .specific-projects {
+            width: 48%;
+        }
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .project-button {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .project-button img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+        section {
+            background: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="images/header-image.jpg" alt="GenAI in AM" class="header-image">
+        <h1>Generative Artificial Intelligence (GenAI) in Additive Manufacturing (AM)</h1>
+
+        <section>
+            <h2>Goal</h2>
+            <p>Exploration of GenAI and foundation models in AM. This includes building AI models for AM and addressing key challenges such as design optimization, process monitoring, and defect detection.</p>
+        </section>
+        
+        <section>
+            <h2>Overview</h2>
+            <p>Foundation models and Generative AI (GenAI) are rapidly evolving fields. </p>
+            
+            <p><strong>Foundation Models</strong> are large pre-trained deep learning models trained on vast datasets using self-supervision.They Can be fine-tuned for various downstream tasks, including:Text generation (e.g., GPT-3), Image generation (e.g., DALL-E) and Classification and language understanding (e.g., BERT) etc.</p>
+            
+            <p3><strong>Generative AI (GenAI) Models</strong> are subsets of foundation models focused on content creation. They are used for creative and generative tasks. They create new content such as:Text (e.g., ChatGPT), Images (e.g., Stable Diffusion),Videos (e.g., Runway Gen-2) etc.  </p3>
+            <p><sup><a href="#citation">[1]</a></sup></p>
+            <p>GenAI has gained attention for its potential in various domains, including Additive Manufacturing (AM). This website serves as a resource for understanding how GenAI and foundation models can be leveraged to improve AM processes. It focuses on:</p>
+            
+            <ul>
+                <p>1. Building and exploring foundation models for AM</p>
+                <p>2. Developing GenAI-powered solutions for AM</p>
+                <p>3. Providing resources for adoption and implementation</p>
+            </ul>
+        </section>
+        <section>
+            <h2>Main Areas of Focus</h2>
+            <p>The content of this website is structured into three main areas:</p>
+            <h3><a href="foundation_models.html" class="link-button">1. Developing GenAI Models for AM</a></h3>
+            <p>This section outlines the process of developing GenAI models specifically for AM. It consists of various projects. Each shows a unique application of GenAI in manufacturing. The aim is to showcase how AI can enhance efficiency, reliability, and intelligence in AM.</p>
+            
+            <h3><a href="genai_agents.html" class="link-button">2. GenAI Agents: Application in AM and Manufacturing</a></h3>
+            <p>This section discusses the role of GenAI agents in AM and broader manufacturing processes. It features multiple projects that investigate the integration of AI-driven agents to optimize production workflows and decision-making.</p>
+            
+            <h3><a href="dataset.html" class="link-button"> 3. Resource Repository: AM Datasets for Gen AI Models</a></h3>
+            <p>This section provides a collection of diverse AM datasets that can be used for training and benchmarking GenAI models.</p>
+            
+            <h3><a href="misc_projects.html" class="link-button">4. Miscellaneous Projects</a></h3>
+            <p>This is the last  section covers  that covers any additional research related to GenAI and AM, such as:</p>
+            <ul>
+                <p>1. Identification of Artificial Narrow Intelligence (ANI) in AM</p>
+                <p>2. Linkages between ANI and foundation models</p>
+                <p>3. Text mining and resource gathering (e.g., relevant documents, literature reviews)</p>
+            </ul>
+
+            
+        </section>
+    </div>
+    <h3>References</h3>
+    <p id="citation">
+        [1] Augmenting Research Methods with Foundation Models and Generative AI, 
+        <a href="https://doi.org/10.1016/j.ijinfomgt.2023.102749" target="_blank">International Journal of Information Management</a>, 2024.
+    </p>
+</body>
+</html>
