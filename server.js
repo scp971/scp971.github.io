@@ -1,23 +1,21 @@
-require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
 
 const app = express();
-app.use(cors()); // Allow requests from your frontend
+app.use(cors());
 app.use(express.json());
 
 const API_KEY = process.env.AZURE_OPENAI_API_KEY;
 const ENDPOINT = process.env.AZURE_OPENAI_ENDPOINT;
 const DEPLOYMENT_NAME = process.env.AZURE_DEPLOYMENT_NAME;
 
-// API Route to handle chat requests
 app.post("/api/chat", async (req, res) => {
     try {
         const userMessage = req.body.message;
-        
+
         const response = await axios.post(
-            `${ENDPOINT}/openai/deployments/${DEPLOYMENT_NAME}/chat/completions?api-version=2024-02-01`, // Ensure correct API version
+            `${ENDPOINT}/openai/deployments/${DEPLOYMENT_NAME}/chat/completions?api-version=2024-02-01`,
             {
                 messages: [{ role: "user", content: userMessage }]
             },
@@ -36,6 +34,6 @@ app.post("/api/chat", async (req, res) => {
     }
 });
 
-// Start the server
+// Start server on GitHub Pages (if possible) or another free hosting
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
