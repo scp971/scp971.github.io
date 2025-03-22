@@ -17,7 +17,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-
+          
+      - name: Vérifier et créer package.json si absent
+        run: |
+          if [ ! -f package.json ]; then
+            npm init -y
+          fi
+          
       - name: Install Dependencies
         run: npm install
 
@@ -27,11 +33,11 @@ jobs:
           echo "AZURE_OPENAI_ENDPOINT=${{ secrets.AZURE_OPENAI_ENDPOINT }}" >> $GITHUB_ENV
           echo "AZURE_DEPLOYMENT_NAME=${{ secrets.AZURE_DEPLOYMENT_NAME }}" >> $GITHUB_ENV
 
-      - name: Build Project
-        run: npm run build  # Skip this if not using a build process
+      #- name: Build Project
+      #  run: npm run build   Skip this if not using a build process
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
+          branch: main
           folder: public  # Adjust if your output folder is different
