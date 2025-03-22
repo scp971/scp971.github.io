@@ -33,8 +33,8 @@ jobs:
           echo "AZURE_OPENAI_ENDPOINT=${{ secrets.AZURE_OPENAI_ENDPOINT }}" >> $GITHUB_ENV
           echo "AZURE_DEPLOYMENT_NAME=${{ secrets.AZURE_DEPLOYMENT_NAME }}" >> $GITHUB_ENV
 
-      - name: Build Project
-        run: npm run build  # Skip this if not using a build process
+      #- name: Build Project
+      #  run: npm run build   Skip this if not using a build process
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
