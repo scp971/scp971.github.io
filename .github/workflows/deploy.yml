@@ -5,8 +5,6 @@ on:
     branches:
       - main  # Adjust if your main branch has a different name
 
-
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -19,13 +17,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-
-        - name: Vérifier et créer package.json si absent
+          
+      - name: Vérifier et créer package.json si absent
         run: |
           if [ ! -f package.json ]; then
             npm init -y
           fi
-
+          
       - name: Install Dependencies
         run: npm install
 
