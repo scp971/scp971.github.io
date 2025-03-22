@@ -1,0 +1,37 @@
+name: Deploy Backend to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Adjust if your main branch has a different name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Inject Secrets into Environment
+        run: |
+          echo "AZURE_OPENAI_API_KEY=${{ secrets.AZURE_OPENAI_API_KEY }}" >> $GITHUB_ENV
+          echo "AZURE_OPENAI_ENDPOINT=${{ secrets.AZURE_OPENAI_ENDPOINT }}" >> $GITHUB_ENV
+          echo "AZURE_DEPLOYMENT_NAME=${{ secrets.AZURE_DEPLOYMENT_NAME }}" >> $GITHUB_ENV
+
+      - name: Build Project
+        run: npm run build  # Skip this if not using a build process
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: public  # Adjust if your output folder is different
